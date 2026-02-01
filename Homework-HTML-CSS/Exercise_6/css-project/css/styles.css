@@ -1,0 +1,559 @@
+/* Typoraphy CSS */
+:root {
+  --color-primary: #2584ff;
+  --color-secondary: #00d9ff;
+  --color-accent: #ff3400;
+  --color-headings: #1b0760;
+  --color-body: #918ca4;
+  --color-background: #ffffffff;
+  --color-nav: #00000000;
+  --color-check: #2dd5a7;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+/* 10x100 / 16 = 62.5% */
+/* 62.5% của 16px = 10px */
+html {
+    font-size: 62.5%;
+}
+
+body {
+  font-family: "Inter", Arial, Helvetica, sans-serif;
+  font-size: 2rem;
+  color: var(--color-body);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+    color: var(--color-headings);
+}
+
+p {
+    color: #fff;
+}
+
+h1 {
+    font-size: 7rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+p {
+    margin-top: 0;
+}
+
+@media screen and (min-width: 1024px) {
+    body {font-size: 1.8rem;}
+    h1 {font-size: 8rem;}
+    h2 {font-size: 4rem;}
+    h3 {font-size: 2rem;}
+}
+
+/* Link CSS */
+.link-arrow {
+    color: var(--color-accent);
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+}
+
+.link-arrow::after {
+    content: "-->";
+    margin-left: 5px;
+    transition: margin 0.15s ease 0s;
+}
+
+.link-arrow:hover::after {
+    margin-left: 10px;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .link-arrow {
+        font-size: 1.5rem;
+    }
+}
+
+/* Badge CSS */
+.badge {
+    border-radius: 20px;
+    padding: 0.5rem 2rem;
+    font-weight: 600;
+    font-size: 2rem;
+    white-space: normal;
+}
+
+.badge--primary {
+    background-color: var(--color-primary);
+    color: white;
+}
+
+.badge--secondary {
+    background-color: var(--color-secondary);
+    color: white;
+}
+
+.badge--small {
+    font-size: 1.6rem;
+}
+
+@media screen and (min-width: 1024px) {
+    .badge {
+        font-size: 1.5rem;
+    }
+
+    .badge--small {
+        font-size: 1.6rem;
+    }
+}
+
+/* Block Skewed Left */
+.hero {
+    background-color: black;
+    clip-path: polygon(0 0, 100% 0%, 100% 90%, 0 100%);
+    padding: 30px 15px;
+    padding-bottom: 200px;
+}
+
+.hero nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hero nav img {
+    width: 300px;
+}
+
+.hero nav ul {
+    list-style: none;
+    font-size: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero nav ul li a {
+    color: var(--color-body);
+}
+
+.hero nav ul li a:hover {
+    color: var(--color-primary);
+}
+
+.hero--underNav {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.block--primary {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 80px;
+}
+
+.text--heading {
+    color: var(--color-background);
+    font-size: 14rem;
+    margin-bottom: 10px;
+    line-height: 1.1;
+}
+
+.text--tagline {
+    font-size: 3.4rem;
+    color: var(--color-body);
+    letter-spacing: 1.5px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.btn {
+    background-color: var(--color-accent);
+    padding: 20px 100px;
+    border-radius: 100px ;
+    color: var(--color-background);
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: var(--color-primary);
+}
+
+.hero--image {
+    width: 50%;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px auto;
+}
+
+.content h2 {
+    color: var(--color-headings);
+    font-size: 6rem;
+}
+
+.content p {
+    color: var(--color-body);
+    font-size: 2.7rem;
+}
+
+.search {
+    display: flex;
+    background-color: var(--color-background);
+    border-radius: 50px;
+    padding: 5px;
+    margin: 60px;
+    align-items: center;
+    gap: 250px;
+    box-shadow: 0px 0px 200px 0px var(--color-body);
+}
+
+.search p {
+    padding: 0 30px;
+    font-size: 2.5rem;
+}
+
+.search a {
+    display: flex;
+    font-size: 3rem;
+    gap: 20px;
+}
+
+.search-icon {
+    width: 3rem;
+}
+
+.pay {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-bottom: 150px;
+}
+
+.box-large {
+    border-radius: 12px;
+    box-shadow: 0 0 20px 0 var(--color-body);
+}
+
+.box-large.active {
+    transform: scale(1.1);
+    overflow: hidden;
+}
+
+.box-header.active {
+    background-color: var(--color-primary);
+}
+
+.box-large.active::after {
+  content: "POPULAR";
+  position: absolute;
+  top: 25px;
+  right: -35px;
+  background: var(--color-headings);
+  color: white;
+  padding: 5px 40px;
+  transform: rotate(90deg);
+  font-size: 12px;
+}
+
+.box-header {
+    background-color: var(--color-secondary);
+    color: white;
+    padding: 20px;
+    border-radius: 12px 12px 0 0;
+}
+
+.box-header span {
+    display: flex;
+}
+
+.box-header span span {
+    font-size: 5rem;
+}
+
+.box-header span span + span {
+    font-size: 2rem;
+    margin: 35px 5px;
+}
+
+.box-header span span + span + .badge--secondary {
+    font-size: 1.2rem;
+    background-color: #00cdf1;
+}
+
+.box-header span span + span + .badge--primary {
+    font-size: 1.2rem;
+    background-color: #1f76e8;
+}
+
+.box-content-main {
+    padding: 20px;
+}
+
+.box-content-main .box-content {
+    display: flex;
+    padding: 10px;
+}
+
+.box-content-main .box-content p {
+    display: flex;
+    color: var(--color-check);
+    padding: 0 5px;
+}
+
+.box-content-main .box-content p + p {
+    display: flex;
+    color: var(--color-headings);
+}
+
+button {
+    margin: 20px auto;
+    border-radius: 30px;
+    padding: 16px 80px;
+    display: flex;
+    background-color: var(--color-background);
+    border: 2px solid var(--color-headings);
+}
+
+button:hover {
+    background-color: var(--color-primary);
+}
+
+button a {
+    color: var(--color-headings);
+    font-weight: bold;
+}
+
+.content-large {
+    display: flex;
+    justify-content: space-between;
+    padding: 100px 20px;
+}
+
+.content-large img {
+    width: 50%;
+}
+
+.content-small img {
+    width: 60px;
+    filter: invert(26%) sepia(100%) saturate(1606%) hue-rotate(218deg) brightness(98%) contrast(96%);
+}
+
+.content-small h3 {
+    font-size: 4rem;
+}
+
+.content-small p {
+    font-size: 3rem;
+    margin-bottom: 30px;
+}
+
+.content-small a {
+    font-size: 2.5rem;
+}
+
+.page-third .content {
+    background-color: black;
+    clip-path: polygon(100% 0%, 100% 100%, 0% 90%, 0% 0%);
+    padding-bottom: 50px;
+}
+
+.page-third .content h2 {
+    color: var(--color-background);
+    padding-top: 100px;
+}
+
+.page-third .content-large {
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.page-third .content-large > img {
+    width: 50%;
+}
+
+.page-third .content-large .content-small {
+    display: flex;
+    align-items: flex-start;
+    padding-right: 45px;
+    gap: 20px;
+}
+
+.page-third .content-large .content-small img {
+    filter: invert(26%) sepia(100%) saturate(1606%) hue-rotate(218deg) brightness(98%) contrast(96%);
+    width: 50px;
+}
+
+.page-third .content-large .content-small .content-smaller h3 {
+    color: var(--color-background);
+    font-size: 3rem;
+}
+
+.page-third .content-large .content-small .content-smaller p {
+    color: var(--color-body);
+    font-size: 2rem;
+}
+
+.page-third .content-last h3 {
+    display: flex;
+    justify-content: center;
+    font-size: 6rem;
+    margin: 0;
+}
+
+.page-third .content-last {
+    padding-bottom: 100px;
+}
+
+.page-third .content-last p {
+    display: flex;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--color-body);
+}
+
+.page-third .content-last .note-saying {
+    background-color: var(--color-background);
+    padding: 30px;
+    margin: 15px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px 0;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+.page-third .content-last .img-human {
+    width: 170%;
+}
+
+.page-third .content-last .img-icons {
+    width: 50px;
+    height: 50px;
+    padding: 20px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    transform: translateX(-55%);
+    margin: 20px 0;
+}
+
+.page-third .content-last .note {
+    transform: translateY(10%);
+}
+
+.page-third .content-last .note p {
+    color: var(--color-body);
+    font-size: 3rem;
+    font-style: italic;
+    padding-right: 50px;
+}
+
+.page-third .content-last .note .signature {
+    display: flex;
+    justify-content: left;
+}
+
+.page-third .content-last .note .signature img {
+    width: 50px;
+}
+
+.page-third .content-last .note .signature .signature-key {
+    color: var(--color-headings);
+    padding: 20px;
+    font-size: 3rem;
+}
+
+.page-third .content-last .note .signature .signature-key p {
+    color: var(--color-body);
+    font-size: 2rem;
+}
+
+.footer-primary {
+    background-color: var(--color-primary);
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+}
+
+.footer-primary .btn {
+    background-color: var(--color-secondary);
+}
+.footer-primary .btn:hover {
+    background-color: var(--color-accent);
+}
+
+.footer-primary .content-footer {
+    width: 70%;
+    padding: 20px;
+    padding-bottom: 50px;
+}
+
+.footer-primary .content-footer h3 {
+    color: var(--color-background);
+    margin-bottom: 10px;
+    font-size: 3rem;
+    line-height: 1.5;
+}
+
+.footer-secondary {
+    background-color: rgb(17, 17, 17);
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 20px;
+}
+
+.footer-secondary img {
+    height: 40px;
+    filter: invert(100%) sepia(100%) saturate(13%) hue-rotate(237deg) brightness(104%) contrast(104%);
+}
+
+.footer-secondary p {
+    color: var(--color-body);
+    font-size: 1.5rem;
+    padding: 0 15%;
+    text-align: center;
+}
+
+.footer-secondary .footer-content {
+    display: flex;
+    gap: 150px;
+}
+
+.footer-secondary .footer-content .footer-text h2 {
+    color: var(--color-background);
+    font-size: 2.5rem;
+}
+
+.footer-secondary .footer-content .footer-text ul {
+    list-style: none;
+    font-size: 1.5rem;
+    padding-top: 10px;
+}
+
+.footer-secondary .footer-content .footer-text ul li a {
+    color: var(--color-body);
+}
+
+.footer-secondary .footer-content .footer-text ul li a:hover {
+    color: var(--color-primary);
+}
